@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setups & Tackle | nays.addict</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+  <!-- GLASS NAVIGATION -->
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand">nays.addict | <span>앤토니</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="setups.html" class="active">Setups & Tackle</a>
+      <a href="gallery.html">Galerie</a>
+      <a href="about.html">Über mich</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <span class="badge">TACKLE & RIGS</span>
+    <h1>My Weapon of Choice</h1>
+    <p>100% Nays Baits, combined with KDM/JDM Terminal Precision.</p>
+  </header>
+
+  <!-- FILTER BUTTONS -->
+  <section class="filter-section">
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">Alle</button>
+      <button class="filter-btn" data-filter="baits">Nays Baits</button>
+      <button class="filter-btn" data-filter="terminal">KDM/JDM/Terminal</button>
+    </div>
+  </section>
+
+  <!-- TACKLE GRID -->
+  <main class="tackle-grid-container">
+    <div class="tackle-grid">
+
+      <!-- CARD 1: NAYS BAITS -->
+      <article class="tackle-card" data-category="baits">
+        <div class="card-badge Nays">Nays Lures</div>
+        <div class="card-image">
+          <img src="vnm.webp" alt="Nays VNM">
+        </div>
+        <div class="card-content">
+          <h3>Nays VNM 20</h3>
+          <p class="card-desc">Mein Go-To Softbait für maximale Action auf Barsche.</p>
+          <span class="tag">Softbaits</span>
+        </div>
+      </article>
+
+      <article class="tackle-card" data-category="baits">
+        <div class="card-badge Nays">Nays Lures</div>
+        <div class="card-image">
+          <img src="splt.webp" alt="Nays SPLT">
+        </div>
+        <div class="card-content">
+          <h3>Nays SPLT 35</h3>
+          <p class="card-desc">Mein Go-To No-Action Shad für maximale Action auf Barsche.</p>
+          <span class="tag">Softbaits</span>
+        </div>
+      </article>
+
+      <article class="tackle-card" data-category="baits">
+        <div class="card-badge Nays">Nays Lures</div>
+        <div class="card-image">
+          <img src="crd.webp" alt="Nays CRD">
+        </div>
+        <div class="card-content">
+          <h3>Nays CRD</h3>
+          <p class="card-desc">Meine Go-To Craw für maximale Action auf dicke Barsche gepart mit dem Nays DLT Type1.</p>
+          <span class="tag">Softbaits</span>
+        </div>
+      </article>
+
+      <article class="tackle-card" data-category="baits">
+        <div class="card-badge Nays">Nays Lures</div>
+        <div class="card-image">
+          <img src="mdmx2.0.webp" alt="Nays MD MX 2.0 ">
+        </div>
+        <div class="card-content">
+          <h3>Nays MD MX 2.0 80</h3>
+          <p class="card-desc">Bester Twichbait für Barsche</p>
+          <span class="tag">Hardbait</span>
+        </div>
+      </article>
+
+        <article class="tackle-card" data-category="baits">
+        <div class="card-badge Nays">Nays Lures</div>
+        <div class="card-image">
+          <img src="s.png" alt="Nays MD MX 2.0 ">
+        </div>
+        <div class="card-content">
+          <h3>Nays MD MX 2.0 80</h3>
+          <p class="card-desc">Bester Twichbait für Barsche</p>
+          <span class="tag">Hardbait</span>
+        </div>
+      </article>
+
+      <!-- CARD 2: TERMINAL GEAR -->
+      <article class="tackle-card" data-category="terminal">
+        <div class="card-badge kdm">KDM</div>
+        <div class="card-image">
+          <img src="gurza.jpeg" alt="KDM Terminal Tackle">
+        </div>
+        <div class="card-content">
+          <h3>Gurza Offset Hooks</h3>
+          <p class="card-desc">Sehr schafe Offset Haken aus koreanischem Stahl gefertigt</p>
+          <span class="tag">Terminal Tackle</span>
+        </div>
+      </article>
+
+      <article class="tackle-card" data-category="terminal">
+        <div class="card-badge kdm">JDM</div>
+        <div class="card-image">
+          <img src="hayabusa.jpeg" alt="JDM Terminal Tackle">
+        </div>
+        <div class="card-content">
+          <h3>Hayabusa ARROW </h3>
+          <p class="card-desc">Sehr schafe Micro JIG/DART HEAD</p>
+          <span class="tag">Terminal Tackle</span>
+        </div>
+      </article>
+
+      <article class="tackle-card" data-category="terminal">
+        <div class="card-badge kdm">Nays</div>
+        <div class="card-image">
+          <img src="dlt.webp" alt="Nays Terminal Tackle">
+        </div>
+        <div class="card-content">
+          <h3>Nays DLT Type 1</h3>
+          <p class="card-desc">Skirted Jig mit sehr schafem BKK Haken.</p>
+          <span class="tag">Terminal Tackle</span>
+        </div>
+      </article>
+    </div>
+  </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const tackleCards = document.querySelectorAll('.tackle-card');
+
+            filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Active-Klasse bei allen Buttons entfernen
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Active-Klasse beim geklickten Button hinzufügen
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                tackleCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+
+                // Zeige alle Karten, wenn "all" gewählt ist, sonst nur die passenden
+                if (filterValue === 'all' || filterValue === cardCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+                });
+            });
+            });
+        });
+    </script>
+</body>
+</html>
