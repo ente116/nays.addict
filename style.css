@@ -3,65 +3,90 @@
    ========================================== */
 
 /* Tablet & kleine Bildschirme (unter 992px) */
-@media (max-width: 992px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .about-hero {
-    grid-template-columns: 1fr; /* Stapelt Bild und Text untereinander */
-    gap: 25px;
-  }
-}
+/* ==========================================
+   PERFEKTES MOBILE DESIGN (SMARTPHONES)
+   ========================================== */
 
-/* Smartphones (unter 768px) */
 @media (max-width: 768px) {
-  /* Navigation kompakter machen */
+  /* 1. GLASS NAV MOBIL KOMPAKT & SAUBER */
   .glass-nav {
-    width: 95%;
-    padding: 10px 16px;
+    width: 92%;
+    padding: 8px 14px;
     top: 10px;
+    flex-direction: column; /* Stapelt Brand & Links sauber */
+    gap: 8px;
+    border-radius: 20px;
   }
 
   .nav-brand {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .nav-links {
-    gap: 12px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+    overflow-x: auto; /* Erlaubt wischbares Menü, falls der Platz nicht reicht */
+    white-space: nowrap;
+    padding-bottom: 2px;
   }
 
   .nav-links a {
-    font-size: 0.85rem;
-    padding: 4px 8px;
+    font-size: 0.75rem;
+    padding: 5px 8px;
+    border-radius: 12px;
   }
 
-  /* Header & Abstände anpassen */
+  /* 2. PAGE HEADER & SPACING */
   .page-header {
-    padding: 120px 15px 30px;
+    padding: 130px 15px 25px; /* Verhindert, dass die Nav den Header verdeckt */
   }
 
   .page-header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
   }
 
-  /* Grids auf 1 Spalte begrenzen */
+  .page-header p {
+    font-size: 0.9rem;
+  }
+
+  /* 3. HERO & GRID FIXES */
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Buttons auf dem Handy untereinander */
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 4. ALLE KARTEN & GRIDS EINSPALTIG */
   .gallery-grid,
   .tackle-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .stats-grid,
+  .about-hero {
+    grid-template-columns: 1fr !important;
     gap: 16px;
+  }
+
+  .about-image-wrapper {
+    aspect-ratio: 1 / 1; /* Quadratisches Bild auf dem Handy für weniger Höhe */
   }
 }
 
-/* Sehr kleine Smartphones (unter 480px) */
-@media (max-width: 480px) {
+/* SONDERFALL: SEHR KLEINE DISPLAY-BREITEN (Z.B. iPhone SE) */
+@media (max-width: 400px) {
   .nav-brand span {
-    display: none; /* Versteckt den koreanischen Namen auf Winz-Bildschirmen */
-  }
-  
-  .hero h1 {
-    font-size: 1.8rem;
+    display: none; /* Blendet 앤토니 aus, um Platz im Header zu sparen */
   }
 }
 
