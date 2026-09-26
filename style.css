@@ -750,14 +750,6 @@ img {
     padding: 100px 16px 40px;
   }
 
-  .hero-bg img {
-    object-position: center 20%;
-  }
-
-  .hero-content {
-    margin-top: 260px;
-  }
-
   .hero h1 {
     font-size: 2.1rem;
   }
