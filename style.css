@@ -815,15 +815,23 @@ img {
   .btn {
     padding: 12px 8px;
     font-size: 0.85rem;
-    transform: none !important;
-    box-shadow: none !important;
   }
 
-  /* Animation/Effekt beim Anklicken der Buttons deaktivieren */
+  /* Sämtliche Klick-, Fokus- und Animationseffekte für Buttons entfernen */
+  .btn-primary,
+  .btn-glass,
   .btn-primary:active,
-  .btn-glass:active {
+  .btn-glass:active,
+  .btn-primary:focus,
+  .btn-glass:focus,
+  .btn-primary:focus-visible,
+  .btn-glass:focus-visible {
     transform: none !important;
-    box-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+    outline: none !important;
+    margin-left: 0 !important;
+    left: auto !important;
   }
 
   /* Mein Tackle entdecken: unten in der Hero-Section, unter dem Zander */
