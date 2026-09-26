@@ -48,20 +48,10 @@ body {
 }
 
 .nav-brand {
-  font-family: inherit; /* Nutzt die Hauptschriftart der Website */
-  font-size: 1.1rem;
-  font-weight: 800; /* Kräftige, fette Schriftart */
-  letter-spacing: -0.02em;
-  color: #111111 !important;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.nav-brand span {
-  font-weight: 500;
-  color: #666666; /* Dezentes Grau für den koreanischen Namen 앤토니 */
+  color: var(--text-main);
 }
 
 .nav-links {
