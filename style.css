@@ -745,6 +745,11 @@ img {
     text-align: left;
   }
 
+  /*Handy bild etwas eingrauen*/
+  .hero-bg img {
+    filter: grayscale(100%) contrast(1.1) brightness(0.55);
+  }
+
   /* Hero */
   .hero {
     min-height: 600px;
