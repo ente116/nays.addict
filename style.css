@@ -752,8 +752,18 @@ img {
 
   /* Hero */
   .hero {
-    min-height: 600px;
-    padding: 100px 16px 40px;
+    min-height: 100vh;
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 40%;                 /* <- HIER anpassen, bis Text über deinem Kopf sitzt */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 16px;
   }
 
   .hero h1 {
