@@ -780,7 +780,7 @@ img {
   .hero-content {
     position: static;        /* WICHTIG: static, damit der ausgekoppelte Button
                                  sich auf .hero bezieht, nicht auf diesen Block */
-    margin-top: 180px;
+    margin-top: 170px;
     width: 100%;
     padding: 0 20px;
   }
