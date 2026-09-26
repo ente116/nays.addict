@@ -144,6 +144,14 @@ body {
   object-position: center 45%;
   filter: grayscale(100%) contrast(1.1) brightness(0.75);
 }
+
+.hero-img-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .hero-img-desktop { display: none; }
+  .hero-img-mobile { display: block; }
+}
+
 .hero-content {
   max-width: 700px;
   color: #ffffff;
