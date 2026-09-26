@@ -816,6 +816,13 @@ img {
     padding: 12px 8px;
     font-size: 0.85rem;
   }
+  
+  /* Animation/Effekt beim Anklicken der Buttons deaktivieren */
+  .btn-primary:active,
+  .btn-glass:active {
+    transform: none !important;
+    box-shadow: none !important;
+  }
 
   /* Mein Tackle entdecken: unten in der Hero-Section, unter dem Zander */
   .btn-primary {
