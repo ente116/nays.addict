@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Setups & Tackle | nays.addict</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="light-theme">
 
   <!-- GLASS NAVIGATION -->
   <nav class="glass-nav">
     <a href="index.html" class="nav-brand">nays.addict | <span>앤토니</span></a>
-    <div class="nav-links">
+    
+    <button class="mobile-toggle" aria-label="Menü öffnen" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="setups.html" class="active">Setups & Tackle</a>
+      <a href="tackle.html" class="active">Setups & Tackle</a>
       <a href="gallery.html">Galerie</a>
       <a href="about.html">Über mich</a>
     </div>
@@ -72,7 +81,7 @@
         </div>
         <div class="card-content">
           <h3>Nays CRD</h3>
-          <p class="card-desc">Meine Go-To Craw für maximale Action auf dicke Barsche gepart mit dem Nays DLT Type1.</p>
+          <p class="card-desc">Meine Go-To Craw für maximale Action auf dicke Barsche gepaart mit dem Nays DLT Type1.</p>
           <span class="tag">Softbaits</span>
         </div>
       </article>
@@ -80,23 +89,23 @@
       <article class="tackle-card" data-category="baits">
         <div class="card-badge Nays">Nays Lures</div>
         <div class="card-image">
-          <img src="mdmx2.png" alt="Nays MD MX 2.0 ">
+          <img src="mdmx2.png" alt="Nays MD MX 2.0">
         </div>
         <div class="card-content">
           <h3>Nays MD MX 2.0 80</h3>
-          <p class="card-desc">Bester Twichbait für Barsche</p>
+          <p class="card-desc">Bester Twitchbait für Barsche.</p>
           <span class="tag">Hardbait</span>
         </div>
       </article>
 
-        <article class="tackle-card" data-category="baits">
+      <article class="tackle-card" data-category="baits">
         <div class="card-badge Nays">Nays Lures</div>
         <div class="card-image">
-          <img src="rnn.png" alt="Nays RNN 50 ">
+          <img src="rnn.png" alt="Nays RNN 50">
         </div>
         <div class="card-content">
           <h3>Nays RNN 50</h3>
-          <p class="card-desc">Kleiner Hardbait für Barsche</p>
+          <p class="card-desc">Kleiner Hardbait für Barsche.</p>
           <span class="tag">Hardbait</span>
         </div>
       </article>
@@ -109,7 +118,7 @@
         </div>
         <div class="card-content">
           <h3>Gurza Offset Hooks</h3>
-          <p class="card-desc">Sehr schafe Offset Haken aus koreanischem Stahl gefertigt</p>
+          <p class="card-desc">Sehr scharfe Offset-Haken aus koreanischem Stahl gefertigt.</p>
           <span class="tag">Terminal Tackle</span>
         </div>
       </article>
@@ -120,8 +129,8 @@
           <img src="hayabusa.jpeg" alt="JDM Terminal Tackle">
         </div>
         <div class="card-content">
-          <h3>Hayabusa ARROW </h3>
-          <p class="card-desc">Sehr schafe Micro JIG/DART HEAD</p>
+          <h3>Hayabusa ARROW</h3>
+          <p class="card-desc">Sehr scharfe Micro-JIG / DART HEADS.</p>
           <span class="tag">Terminal Tackle</span>
         </div>
       </article>
@@ -133,40 +142,48 @@
         </div>
         <div class="card-content">
           <h3>Nays DLT Type 1</h3>
-          <p class="card-desc">Skirted Jig mit sehr schafem BKK Haken.</p>
+          <p class="card-desc">Skirted Jig mit sehr scharfem BKK-Haken.</p>
           <span class="tag">Terminal Tackle</span>
         </div>
       </article>
     </div>
   </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const tackleCards = document.querySelectorAll('.tackle-card');
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Burger Menu Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
 
-            filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Active-Klasse bei allen Buttons entfernen
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Active-Klasse beim geklickten Button hinzufügen
-                button.classList.add('active');
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
 
-                const filterValue = button.getAttribute('data-filter');
+      // Filter Logic
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const tackleCards = document.querySelectorAll('.tackle-card');
 
-                tackleCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
 
-                // Zeige alle Karten, wenn "all" gewählt ist, sonst nur die passenden
-                if (filterValue === 'all' || filterValue === cardCategory) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-                });
-            });
-            });
+          const filterValue = button.getAttribute('data-filter');
+
+          tackleCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (filterValue === 'all' || filterValue === cardCategory) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
         });
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>

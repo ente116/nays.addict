@@ -1,92 +1,89 @@
 /* ==========================================
-   RESPONSIVE DESIGN (MOBIL & TABLET)
+   DESKTOP DEFAULT FOR TOGGLE
    ========================================== */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  z-index: 1001;
+}
 
-/* Tablet & kleine Bildschirme (unter 992px) */
+.mobile-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #111111;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 /* ==========================================
-   PERFEKTES MOBILE DESIGN (SMARTPHONES)
+   MOBILE BURGER MENU & RESPONSIVE STYLES
    ========================================== */
-
 @media (max-width: 768px) {
-  /* 1. GLASS NAV MOBIL KOMPAKT & SAUBER */
   .glass-nav {
-    width: 92%;
-    padding: 8px 14px;
-    top: 10px;
-    flex-direction: column; /* Stapelt Brand & Links sauber */
-    gap: 8px;
-    border-radius: 20px;
+    width: 90%;
+    padding: 12px 20px;
+    top: 15px;
   }
 
-  .nav-brand {
-    font-size: 0.9rem;
+  .mobile-toggle {
+    display: flex;
   }
 
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 4px;
-    overflow-x: auto; /* Erlaubt wischbares Menü, falls der Platz nicht reicht */
-    white-space: nowrap;
-    padding-bottom: 2px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
   }
 
   .nav-links a {
-    font-size: 0.75rem;
-    padding: 5px 8px;
-    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111111;
   }
 
-  /* 2. PAGE HEADER & SPACING */
+  .mobile-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Spalten-Layouts & Abstände auf Mobil */
   .page-header {
-    padding: 130px 15px 25px; /* Verhindert, dass die Nav den Header verdeckt */
+    padding: 120px 15px 30px;
   }
 
-  .page-header h1 {
-    font-size: 1.75rem;
-    line-height: 1.2;
-  }
-
-  .page-header p {
-    font-size: 0.9rem;
-  }
-
-  /* 3. HERO & GRID FIXES */
-  .hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.25;
-  }
-
-  .hero-buttons {
-    flex-direction: column; /* Buttons auf dem Handy untereinander */
-    width: 100%;
-    gap: 10px;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* 4. ALLE KARTEN & GRIDS EINSPALTIG */
   .gallery-grid,
   .tackle-grid,
   .stats-grid,
   .about-hero {
     grid-template-columns: 1fr !important;
-    gap: 16px;
-  }
-
-  .about-image-wrapper {
-    aspect-ratio: 1 / 1; /* Quadratisches Bild auf dem Handy für weniger Höhe */
-  }
-}
-
-/* SONDERFALL: SEHR KLEINE DISPLAY-BREITEN (Z.B. iPhone SE) */
-@media (max-width: 400px) {
-  .nav-brand span {
-    display: none; /* Blendet 앤토니 aus, um Platz im Header zu sparen */
+    gap: 20px;
   }
 }
 

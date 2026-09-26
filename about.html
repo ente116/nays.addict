@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über mich | nays.addict</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="light-theme">
 
   <!-- GLASS NAVIGATION -->
   <nav class="glass-nav">
     <a href="index.html" class="nav-brand">nays.addict | <span>앤토니</span></a>
-    <div class="nav-links">
+    
+    <button class="mobile-toggle" aria-label="Menü öffnen" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="tackle.html">Setups & Tackle</a>
+      <a href="setups.html">Setups & Tackle</a>
       <a href="gallery.html">Galerie</a>
       <a href="about.html" class="active">Über mich</a>
     </div>
@@ -40,7 +49,7 @@
           Willkommen auf meiner Plattform! Unter <strong>@nays.addict</strong> dreht sich alles um Raubfischangeln mit Fokus auf Barsch, Zander und Hecht, High-End Setups und feinstes Terminal Tackle.
         </p>
         <p>
-          Ich habe diese Seite erstellt, um meine täglichen Erfahrungen am Wasser sowie meine persönliche Tackle-Auswahl transparent zu teilen. Egal ob Streetfishing im Kanal, UL-Angeln oder klassisches Jiggen. Qualität und die richtige Technik machen den Unterschied.
+          Ich habe diese Seite erstellt, um meine täglichen Erfahrungen am Wasser sowie meine persönliche Tackle-Auswahl transparent zu teilen. Egal ob Streetfishing im Kanal, UL-Angeln oder klassisches Jiggen: Qualität und die richtige Technik machen den Unterschied.
         </p>
       </div>
     </section>
@@ -50,7 +59,7 @@
       <div class="stats-grid">
         <div class="stat-card">
           <span class="stat-label">Main Target</span>
-          <h3>Barsch|Zander|Hecht</h3>
+          <h3>Barsch | Zander | Hecht</h3>
         </div>
         <div class="stat-card">
           <span class="stat-label">Favorite Brand</span>
@@ -77,5 +86,14 @@
 
   </main>
 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galerie | nays.addict</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body class="light-theme">
 
   <!-- GLASS NAVIGATION -->
   <nav class="glass-nav">
     <a href="index.html" class="nav-brand">nays.addict | <span>앤토니</span></a>
-    <div class="nav-links">
+    
+    <button class="mobile-toggle" aria-label="Menü öffnen" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="tackle.html">Setups & Tackle</a>
+      <a href="setups.html">Setups & Tackle</a>
       <a href="gallery.html" class="active">Galerie</a>
       <a href="about.html">Über mich</a>
     </div>
@@ -60,19 +69,29 @@
 
       <!-- ITEM 3 -->
       <div class="gallery-item" data-category="catches">
-        <img src="hecht.jpg" alt="Barsch Catch">
+        <img src="hecht.jpg" alt="Hecht Catch">
         <div class="gallery-overlay">
           <span class="gallery-tag">Hecht</span>
-          <h3>Hecht auf VNM 20</h3>
+          <h3>Hecht auf VNM</h3>
         </div>
       </div>
 
     </div>
   </main>
 
-  <!-- FILTER SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Burger Menu Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Filter Logic
       const filterButtons = document.querySelectorAll('.filter-btn');
       const galleryItems = document.querySelectorAll('.gallery-item');
 
