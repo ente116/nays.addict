@@ -817,9 +817,7 @@ img {
     font-size: 0.85rem;
   }
 
-  /* Sämtliche Klick-, Fokus- und Animationseffekte für Buttons entfernen */
-  .btn-primary,
-  .btn-glass,
+  /* Animationen & Effekte beim Anklicken deaktivieren, ohne Layout zu zerbrechen */
   .btn-primary:active,
   .btn-glass:active,
   .btn-primary:focus,
@@ -830,9 +828,6 @@ img {
     transition: none !important;
     animation: none !important;
     outline: none !important;
-    margin-left: 0 !important;
-    left: auto !important;
-    text-align: center;
   }
 
   /* Mein Tackle entdecken: unten in der Hero-Section, unter dem Zander */
