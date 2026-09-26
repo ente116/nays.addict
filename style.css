@@ -815,8 +815,10 @@ img {
   .btn {
     padding: 12px 8px;
     font-size: 0.85rem;
+    transform: none !important;
+    box-shadow: none !important;
   }
-  
+
   /* Animation/Effekt beim Anklicken der Buttons deaktivieren */
   .btn-primary:active,
   .btn-glass:active {
