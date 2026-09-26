@@ -747,23 +747,20 @@ img {
 
   /* Handy: Bildausschnitt + Abdunkeln */
   .hero-bg img {
-    object-position: center 12%;   /* <- HIER feinjustieren: höherer Wert = mehr vom unteren Bildteil sichtbar */
+    object-position: center 12%;
     filter: grayscale(100%) contrast(1.1) brightness(0.55);
   }
 
   /* Hero */
   .hero {
     height: 100vh;
-    height: 100dvh;   /* korrekte Höhe auf Handys, ignoriert die Browser-Leiste */
+    height: 100dvh;
     min-height: 600px;
     padding: 0;
     display: block;
     position: relative;
   }
 
-  /* Dunkler Verlauf über dem Bild, damit Text IMMER lesbar ist.
-     Liegt INNERHALB von .hero-bg (das schon z-index:-1 hat),
-     damit .hero-content "unpositioniert" bleiben kann. */
   .hero-bg::after {
     content: "";
     position: absolute;
@@ -778,8 +775,7 @@ img {
   }
 
   .hero-content {
-    position: static;        /* WICHTIG: static, damit der ausgekoppelte Button
-                                 sich auf .hero bezieht, nicht auf diesen Block */
+    position: static;
     margin-top: 170px;
     width: 100%;
     padding: 0 20px;
@@ -806,8 +802,6 @@ img {
     margin-bottom: 10px;
   }
 
-  /* Buttons werden getrennt: Instagram bleibt oben im Textfluss,
-     "Mein Tackle entdecken" wird unabhängig positioniert */
   .hero-buttons {
     display: block;
   }
@@ -815,41 +809,46 @@ img {
   .btn {
     padding: 12px 8px;
     font-size: 0.85rem;
+    text-align: center;
   }
 
-  /* Animationen & Effekte beim Anklicken deaktivieren, ohne Layout zu zerbrechen */
+  /* Mein Tackle entdecken: unten in der Hero-Section */
+  .btn-primary {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 6% !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 40px) !important;
+    max-width: 320px !important;
+    z-index: 2 !important;
+  }
+
+  /* Instagram Profil: direkt über dem Tackle-Button */
+  .btn-glass {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: calc(6% + 58px) !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 40px) !important;
+    max-width: 320px !important;
+    z-index: 2 !important;
+  }
+
+  /* Sämtliche Klick-, Fokus-, Visited- und Animationseffekte sperren,
+     ohne die horizontale Zentrierung zu verändern */
   .btn-primary:active,
   .btn-glass:active,
   .btn-primary:focus,
   .btn-glass:focus,
+  .btn-primary:visited,
+  .btn-glass:visited,
   .btn-primary:focus-visible,
   .btn-glass:focus-visible {
-    transform: none !important;
+    transform: translateX(-50%) !important;
     transition: none !important;
     animation: none !important;
     outline: none !important;
-  }
-
-  /* Mein Tackle entdecken: unten in der Hero-Section, unter dem Zander */
-  .btn-primary {
-    position: absolute;
-    left: 50%;
-    bottom: 6%;              /* <- HIER anpassen: kleinerer Wert = weiter unten */
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 320px;
-    z-index: 2;
-  }
-
-  /* Instagram Profil: direkt über dem Tackle-Button, ebenfalls ganz unten */
-  .btn-glass {
-    position: absolute;
-    left: 50%;
-    bottom: calc(6% + 58px);  /* <- 58px = Button-Höhe + Abstand zum Tackle-Button darunter */
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 320px;
-    z-index: 2;
+    box-shadow: none !important;
   }
 
   /* Page header */
