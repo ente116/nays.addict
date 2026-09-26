@@ -1,3 +1,70 @@
+/* ==========================================
+   RESPONSIVE DESIGN (MOBIL & TABLET)
+   ========================================== */
+
+/* Tablet & kleine Bildschirme (unter 992px) */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-hero {
+    grid-template-columns: 1fr; /* Stapelt Bild und Text untereinander */
+    gap: 25px;
+  }
+}
+
+/* Smartphones (unter 768px) */
+@media (max-width: 768px) {
+  /* Navigation kompakter machen */
+  .glass-nav {
+    width: 95%;
+    padding: 10px 16px;
+    top: 10px;
+  }
+
+  .nav-brand {
+    font-size: 0.95rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+
+  /* Header & Abstände anpassen */
+  .page-header {
+    padding: 120px 15px 30px;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  /* Grids auf 1 Spalte begrenzen */
+  .gallery-grid,
+  .tackle-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Sehr kleine Smartphones (unter 480px) */
+@media (max-width: 480px) {
+  .nav-brand span {
+    display: none; /* Versteckt den koreanischen Namen auf Winz-Bildschirmen */
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
 :root {
   --bg-color: #ffffff;
   --text-main: #0a0a0a;
@@ -703,4 +770,10 @@ body {
     grid-template-columns: 1fr;
     gap: 25px;
   }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
 }
