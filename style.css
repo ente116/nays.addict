@@ -832,6 +832,7 @@ img {
     outline: none !important;
     margin-left: 0 !important;
     left: auto !important;
+    text-align: center;
   }
 
   /* Mein Tackle entdecken: unten in der Hero-Section, unter dem Zander */
