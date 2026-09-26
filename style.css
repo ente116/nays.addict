@@ -746,7 +746,7 @@ img {
 
   /* Hero */
   .hero {
-    min-height: 600px;
+    min-height: 200px;
     padding: 100px 16px 40px;
   }
 
