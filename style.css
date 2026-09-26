@@ -746,8 +746,17 @@ img {
 
   /* Hero */
   .hero {
-    min-height: 600px;
-    padding: 100px 16px 40px;
+    min-height: 100vh;
+    align-items: flex-end;
+    padding: 100px 16px 60px;
+  }
+
+  .hero-bg img {
+    object-position: center 20%;
+  }
+
+  .hero-content {
+    margin-top: 260px;
   }
 
   .hero h1 {
